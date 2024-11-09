@@ -210,3 +210,5 @@ for robot in Carri Deli Fly Home Move Patrol; do
 done
 
 cd "$original_dir"
+
+echo "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" >>$HOME/.bashrc

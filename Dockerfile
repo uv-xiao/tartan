@@ -2,6 +2,8 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN sed -ri.bak -e 's/\/\/.*?(archive.ubuntu.com|mirrors.*?)\/ubuntu/\/\/mirrors.pku.edu.cn\/ubuntu/g' -e '/security.ubuntu.com\/ubuntu/d' /etc/apt/sources.list
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     sudo \
@@ -67,7 +69,7 @@ RUN apt-get update && apt-get install -y gcc-11 g++-11
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 60 --slave /usr/bin/g++ g++ /usr/bin/g++-11
 
 WORKDIR /tartan
-ENV PINPATH=/tartan/pin-2.14-71313-gcc.4.4.7-linux
+# ENV PINPATH=/tartan/pin-2.14-71313-gcc.4.4.7-linux
 
 COPY requirements.txt .
 
@@ -76,6 +78,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN chmod +x docker_entrypoint.sh
+RUN chmod +x ./setup.sh
+RUN chmod +x ./replicate.py
 
-ENTRYPOINT ["./docker_entrypoint.sh"]
+# RUN chmod +x docker_entrypoint.sh
+# ENTRYPOINT ["./docker_entrypoint.sh"]
