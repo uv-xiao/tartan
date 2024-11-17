@@ -69,7 +69,6 @@ RUN apt-get update && apt-get install -y gcc-11 g++-11
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 60 --slave /usr/bin/g++ g++ /usr/bin/g++-11
 
 WORKDIR /tartan
-# ENV PINPATH=/tartan/pin-2.14-71313-gcc.4.4.7-linux
 
 COPY requirements.txt .
 
@@ -80,6 +79,3 @@ COPY . .
 
 RUN chmod +x ./setup.sh
 RUN chmod +x ./replicate.py
-
-# RUN chmod +x docker_entrypoint.sh
-# ENTRYPOINT ["./docker_entrypoint.sh"]

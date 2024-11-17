@@ -11,3 +11,4 @@ res.*
 **/verify_all.sh
 temp
 TODO.txt
+results/  

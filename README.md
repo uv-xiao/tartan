@@ -1,5 +1,27 @@
 # Tartan: Microarchitecting a Robotic Processor
 
+> **Note:** This repository is a fork of the original [Tartan repository](https://github.com/cmu-roboarch/tartan) 
+
+## Instructions
+
+```
+docker build -t tartan
+docker run --net=host -it --privileged --name tartan-env -v $(pwd):/tartan tartan
+```
+
+inside the container:
+```
+./setup.sh
+source ~/.bashrc
+./replicate.py
+```
+
+
+
+## Original README
+<details>
+<summary>from Tartan @ISCA 2024</summary>
+
 This repository hosts the source code linked to the research detailed in the following paper presented at the International Symposium on Computer Architecture (ISCA), 2024:
 
 ```
@@ -107,3 +129,5 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+</details>
