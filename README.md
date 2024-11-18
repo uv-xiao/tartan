@@ -5,7 +5,7 @@
 ## Instructions
 
 ```
-docker build -t tartan
+docker build -t tartan .
 docker run --net=host -it --privileged --name tartan-env -v $(pwd):/tartan tartan
 ```
 
