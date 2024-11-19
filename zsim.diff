@@ -1,0 +1,50 @@
+Only in ./zsim: build
+Only in ../zsim: .git
+Only in ./zsim: .gitignore
+Files ./zsim/misc/list_syscalls.py and ../zsim/misc/list_syscalls.py differ
+Only in ./zsim: runs.20241109_095255
+Only in ./zsim: .sconsign.dblite
+Files ./zsim/SConstruct and ../zsim/SConstruct differ
+Only in ./zsim/src: anl_array.h
+Files ./zsim/src/cache_arrays.cpp and ../zsim/src/cache_arrays.cpp differ
+Files ./zsim/src/cache_arrays.h and ../zsim/src/cache_arrays.h differ
+Files ./zsim/src/coherence_ctrls.cpp and ../zsim/src/coherence_ctrls.cpp differ
+Files ./zsim/src/coherence_ctrls.h and ../zsim/src/coherence_ctrls.h differ
+Files ./zsim/src/core.h and ../zsim/src/core.h differ
+Files ./zsim/src/decoder.cpp and ../zsim/src/decoder.cpp differ
+Files ./zsim/src/decoder.h and ../zsim/src/decoder.h differ
+Files ./zsim/src/filter_cache.h and ../zsim/src/filter_cache.h differ
+Files ./zsim/src/hash.h and ../zsim/src/hash.h differ
+Files ./zsim/src/init.cpp and ../zsim/src/init.cpp differ
+Files ./zsim/src/memory_hierarchy.h and ../zsim/src/memory_hierarchy.h differ
+Files ./zsim/src/null_core.cpp and ../zsim/src/null_core.cpp differ
+Files ./zsim/src/null_core.h and ../zsim/src/null_core.h differ
+Files ./zsim/src/ooo_core.cpp and ../zsim/src/ooo_core.cpp differ
+Files ./zsim/src/ooo_core.h and ../zsim/src/ooo_core.h differ
+Files ./zsim/src/prefetcher.cpp and ../zsim/src/prefetcher.cpp differ
+Files ./zsim/src/prefetcher.h and ../zsim/src/prefetcher.h differ
+Files ./zsim/src/repl_policies.h and ../zsim/src/repl_policies.h differ
+Files ./zsim/src/simple_core.cpp and ../zsim/src/simple_core.cpp differ
+Files ./zsim/src/simple_core.h and ../zsim/src/simple_core.h differ
+Files ./zsim/src/timing_core.cpp and ../zsim/src/timing_core.cpp differ
+Files ./zsim/src/timing_core.h and ../zsim/src/timing_core.h differ
+Files ./zsim/src/zsim.cpp and ../zsim/src/zsim.cpp differ
+Only in ./zsim/tests: baseline.cfg
+Only in ./zsim/tests: CarriBot_baseline.cfg
+Only in ./zsim/tests: CarriBot_tartan.cfg
+Only in ./zsim/tests: DeliBot_baseline.cfg
+Only in ./zsim/tests: DeliBot_tartan.cfg
+Only in ./zsim/tests: FlyBot_baseline.cfg
+Only in ./zsim/tests: FlyBot_tartan.cfg
+Only in ../zsim/tests: het.cfg
+Only in ./zsim/tests: HomeBot_baseline.cfg
+Only in ./zsim/tests: HomeBot_tartan.cfg
+Only in ../zsim/tests: hooks.cfg
+Only in ./zsim/tests: MoveBot_baseline.cfg
+Only in ./zsim/tests: MoveBot_tartan.cfg
+Only in ./zsim/tests: PatrolBot_baseline.cfg
+Only in ./zsim/tests: PatrolBot_tartan.cfg
+Only in ../zsim/tests: pgo.cfg
+Only in ../zsim/tests: ptree.cfg
+Only in ../zsim/tests: simple.cfg
+Only in ./zsim/tests: tartan.cfg

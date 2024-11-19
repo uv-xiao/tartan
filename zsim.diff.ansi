@@ -1,0 +1,883 @@
+Only in ./zsim: build
+Only in ../zsim: .git
+Only in ./zsim: .gitignore
+diff -riEZbwBd '--color=always' ./zsim/misc/list_syscalls.py ../zsim/misc/list_syscalls.py
+[36m4c4[0m
+[31m< syscallCmd = "gcc -E -dD /usr/include/asm-generic/unistd.h | grep __NR"[0m
+---
+[32m> syscallCmd = "gcc -E -dD /usr/include/asm/unistd.h | grep __NR"[0m
+Only in ./zsim: runs.20241109_095255
+Only in ./zsim: .sconsign.dblite
+diff -riEZbwBd '--color=always' ./zsim/SConstruct ../zsim/SConstruct
+[36m129,132c129,133[0m
+[31m<     HDF5PATH = "/usr"[0m
+[31m<     env["CPPPATH"] += [joinpath(HDF5PATH, "include/hdf5/serial/")][0m
+[31m<     env["LIBPATH"] += [joinpath(HDF5PATH, "lib/x86_64-linux-gnu/hdf5/serial/")][0m
+[31m<     env["RPATH"]   += [joinpath(HDF5PATH, "lib/x86_64-linux-gnu/hdf5/serial/")][0m
+---
+[32m>     if "HDF5PATH" in os.environ:[0m
+[32m>         HDF5PATH = os.getenv("HDF5PATH")[0m
+[32m>         env["CPPPATH"] += [joinpath(HDF5PATH, "include/")][0m
+[32m>         env["LIBPATH"] += [joinpath(HDF5PATH, "lib/")][0m
+[32m>         env["RPATH"]   += [joinpath(HDF5PATH, "lib/")][0m
+Only in ./zsim/src: anl_array.h
+diff -riEZbwBd '--color=always' ./zsim/src/cache_arrays.cpp ../zsim/src/cache_arrays.cpp
+[36m29d28[0m
+[31m< #include "zsim.h"[0m
+[36m33c32[0m
+[31m< SetAssocArray::SetAssocArray(uint32_t _numLines, uint32_t _assoc, ReplPolicy* _rp, HashFamily* _hf, bool _fcp) : rp(_rp), hf(_hf), numLines(_numLines), assoc(_assoc), fcp(_fcp) {[0m
+---
+[32m> SetAssocArray::SetAssocArray(uint32_t _numLines, uint32_t _assoc, ReplPolicy* _rp, HashFamily* _hf) : rp(_rp), hf(_hf), numLines(_numLines), assoc(_assoc)  {[0m
+[36m65,78d63[0m
+[31m< [0m
+[31m<     // Manipulate recency counters[0m
+[31m<     if (this->fcp) {[0m
+[31m<         uint64_t numLinesInRegion = 1024 / zinfo->lineSize;[0m
+[31m<         uint64_t region = lineAddr / numLinesInRegion;[0m
+[31m<         uint32_t set = hf->hash(0, lineAddr) & setMask;[0m
+[31m<         uint32_t first = set*assoc;[0m
+[31m<         for (uint32_t id = first; id < first + assoc; id++) {[0m
+[31m<             if (array[id] / numLinesInRegion == region) {[0m
+[31m<                 rp->manipulate(id);[0m
+[31m<             }[0m
+[31m<         }[0m
+[31m<     }[0m
+[31m< [0m
+diff -riEZbwBd '--color=always' ./zsim/src/cache_arrays.h ../zsim/src/cache_arrays.h
+[36m67d66[0m
+[31m<         bool fcp;[0m
+[36m70c69[0m
+[31m<         SetAssocArray(uint32_t _numLines, uint32_t _assoc, ReplPolicy* _rp, HashFamily* _hf, bool _fcp=false);[0m
+---
+[32m>         SetAssocArray(uint32_t _numLines, uint32_t _assoc, ReplPolicy* _rp, HashFamily* _hf);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/coherence_ctrls.cpp ../zsim/src/coherence_ctrls.cpp
+[36m56c56[0m
+[31m< uint64_t MESIBottomCC::processEviction(Address wbLineAddr, uint32_t lineId, bool lowerLevelWriteback, uint64_t cycle, uint32_t srcId, Address pc) {[0m
+---
+[32m> uint64_t MESIBottomCC::processEviction(Address wbLineAddr, uint32_t lineId, bool lowerLevelWriteback, uint64_t cycle, uint32_t srcId) {[0m
+[36m70c70[0m
+[31m<                 MemReq req = {wbLineAddr, PUTS, selfId, state, cycle, &ccLock, *state, srcId, 0 /*no flags*/, pc};[0m
+---
+[32m>                 MemReq req = {wbLineAddr, PUTS, selfId, state, cycle, &ccLock, *state, srcId, 0 /*no flags*/};[0m
+[36m76c76[0m
+[31m<                 MemReq req = {wbLineAddr, PUTX, selfId, state, cycle, &ccLock, *state, srcId, 0 /*no flags*/, pc};[0m
+---
+[32m>                 MemReq req = {wbLineAddr, PUTX, selfId, state, cycle, &ccLock, *state, srcId, 0 /*no flags*/};[0m
+[36m87c87[0m
+[31m< uint64_t MESIBottomCC::processAccess(Address lineAddr, uint32_t lineId, AccessType type, uint64_t cycle, uint32_t srcId, uint32_t flags, Address pc) {[0m
+---
+[32m> uint64_t MESIBottomCC::processAccess(Address lineAddr, uint32_t lineId, AccessType type, uint64_t cycle, uint32_t srcId, uint32_t flags) {[0m
+[36m107c107[0m
+[31m<                 MemReq req = {lineAddr, GETS, selfId, state, cycle, &ccLock, *state, srcId, flags, pc};[0m
+---
+[32m>                 MemReq req = {lineAddr, GETS, selfId, state, cycle, &ccLock, *state, srcId, flags};[0m
+[36m125c125[0m
+[31m<                 MemReq req = {lineAddr, GETX, selfId, state, cycle, &ccLock, *state, srcId, flags, pc};[0m
+---
+[32m>                 MemReq req = {lineAddr, GETX, selfId, state, cycle, &ccLock, *state, srcId, flags};[0m
+[36m189c189[0m
+[31m< uint64_t MESIBottomCC::processNonInclusiveWriteback(Address lineAddr, AccessType type, uint64_t cycle, MESIState* state, uint32_t srcId, uint32_t flags, Address pc) {[0m
+---
+[32m> uint64_t MESIBottomCC::processNonInclusiveWriteback(Address lineAddr, AccessType type, uint64_t cycle, MESIState* state, uint32_t srcId, uint32_t flags) {[0m
+[36m193c193[0m
+[31m<     MemReq req = {lineAddr, type, selfId, state, cycle, &ccLock, *state, srcId, flags | MemReq::NONINCLWB, pc};[0m
+---
+[32m>     MemReq req = {lineAddr, type, selfId, state, cycle, &ccLock, *state, srcId, flags | MemReq::NONINCLWB};[0m
+[36m250c250[0m
+[31m< uint64_t MESITopCC::processEviction(Address wbLineAddr, uint32_t lineId, bool* reqWriteback, uint64_t cycle, uint32_t srcId, Address pc) {[0m
+---
+[32m> uint64_t MESITopCC::processEviction(Address wbLineAddr, uint32_t lineId, bool* reqWriteback, uint64_t cycle, uint32_t srcId) {[0m
+[36m262c262[0m
+[31m<                                   MESIState* childState, bool* inducedWriteback, uint64_t cycle, uint32_t srcId, uint32_t flags, Address pc) {[0m
+---
+[32m>                                   MESIState* childState, bool* inducedWriteback, uint64_t cycle, uint32_t srcId, uint32_t flags) {[0m
+diff -riEZbwBd '--color=always' ./zsim/src/coherence_ctrls.h ../zsim/src/coherence_ctrls.h
+[36m147c147[0m
+[31m<         uint64_t processEviction(Address wbLineAddr, uint32_t lineId, bool lowerLevelWriteback, uint64_t cycle, uint32_t srcId, Address pc);[0m
+---
+[32m>         uint64_t processEviction(Address wbLineAddr, uint32_t lineId, bool lowerLevelWriteback, uint64_t cycle, uint32_t srcId);[0m
+[36m149c149[0m
+[31m<         uint64_t processAccess(Address lineAddr, uint32_t lineId, AccessType type, uint64_t cycle, uint32_t srcId, uint32_t flags, Address pc);[0m
+---
+[32m>         uint64_t processAccess(Address lineAddr, uint32_t lineId, AccessType type, uint64_t cycle, uint32_t srcId, uint32_t flags);[0m
+[36m155c155[0m
+[31m<         uint64_t processNonInclusiveWriteback(Address lineAddr, AccessType type, uint64_t cycle, MESIState* state, uint32_t srcId, uint32_t flags, Address pc);[0m
+---
+[32m>         uint64_t processNonInclusiveWriteback(Address lineAddr, AccessType type, uint64_t cycle, MESIState* state, uint32_t srcId, uint32_t flags);[0m
+[36m223c223[0m
+[31m<         uint64_t processEviction(Address wbLineAddr, uint32_t lineId, bool* reqWriteback, uint64_t cycle, uint32_t srcId, Address pc);[0m
+---
+[32m>         uint64_t processEviction(Address wbLineAddr, uint32_t lineId, bool* reqWriteback, uint64_t cycle, uint32_t srcId);[0m
+[36m226c226[0m
+[31m<                 MESIState* childState, bool* inducedWriteback, uint64_t cycle, uint32_t srcId, uint32_t flags, Address pc);[0m
+---
+[32m>                 MESIState* childState, bool* inducedWriteback, uint64_t cycle, uint32_t srcId, uint32_t flags);[0m
+[36m342,343c342,343[0m
+[31m<             uint64_t evCycle = tcc->processEviction(wbLineAddr, lineId, &lowerLevelWriteback, startCycle, triggerReq.srcId, triggerReq.pc); //1. if needed, send invalidates/downgrades to lower level[0m
+[31m<             evCycle = bcc->processEviction(wbLineAddr, lineId, lowerLevelWriteback, evCycle, triggerReq.srcId, triggerReq.pc); //2. if needed, write back line to upper level[0m
+---
+[32m>             uint64_t evCycle = tcc->processEviction(wbLineAddr, lineId, &lowerLevelWriteback, startCycle, triggerReq.srcId); //1. if needed, send invalidates/downgrades to lower level[0m
+[32m>             evCycle = bcc->processEviction(wbLineAddr, lineId, lowerLevelWriteback, evCycle, triggerReq.srcId); //2. if needed, write back line to upper level[0m
+[36m357c357[0m
+[31m<                 respCycle = bcc->processNonInclusiveWriteback(req.lineAddr, req.type, startCycle, req.state, req.srcId, req.flags, req.pc);[0m
+---
+[32m>                 respCycle = bcc->processNonInclusiveWriteback(req.lineAddr, req.type, startCycle, req.state, req.srcId, req.flags);[0m
+[36m365c365[0m
+[31m<                 respCycle = bcc->processAccess(req.lineAddr, lineId, req.type, startCycle, req.srcId, flags, req.pc);[0m
+---
+[32m>                 respCycle = bcc->processAccess(req.lineAddr, lineId, req.type, startCycle, req.srcId, flags);[0m
+[36m372c372[0m
+[31m<                             &lowerLevelWriteback, respCycle, req.srcId, flags, req.pc);[0m
+---
+[32m>                             &lowerLevelWriteback, respCycle, req.srcId, flags);[0m
+[36m461c461[0m
+[31m<             uint64_t endCycle = bcc->processEviction(wbLineAddr, lineId, lowerLevelWriteback, startCycle, triggerReq.srcId, triggerReq.pc); //2. if needed, write back line to upper level[0m
+---
+[32m>             uint64_t endCycle = bcc->processEviction(wbLineAddr, lineId, lowerLevelWriteback, startCycle, triggerReq.srcId); //2. if needed, write back line to upper level[0m
+[36m469c469[0m
+[31m<             uint64_t respCycle = bcc->processAccess(req.lineAddr, lineId, req.type, startCycle, req.srcId, req.flags, req.pc);[0m
+---
+[32m>             uint64_t respCycle = bcc->processAccess(req.lineAddr, lineId, req.type, startCycle, req.srcId, req.flags);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/core.h ../zsim/src/core.h
+[36m29d28[0m
+[31m< #include <iostream>[0m
+[36m34d32[0m
+[31m< #include "decoder.h"[0m
+[36m46,47c44,45[0m
+[31m<     void (*loadPtr)(THREADID, ADDRINT, ADDRINT);[0m
+[31m<     void (*storePtr)(THREADID, ADDRINT, ADDRINT);[0m
+---
+[32m>     void (*loadPtr)(THREADID, ADDRINT);[0m
+[32m>     void (*storePtr)(THREADID, ADDRINT);[0m
+[36m51,52c49,50[0m
+[31m<     void (*predLoadPtr)(THREADID, ADDRINT, ADDRINT, BOOL);[0m
+[31m<     void (*predStorePtr)(THREADID, ADDRINT, ADDRINT, BOOL);[0m
+---
+[32m>     void (*predLoadPtr)(THREADID, ADDRINT, BOOL);[0m
+[32m>     void (*predStorePtr)(THREADID, ADDRINT, BOOL);[0m
+[36m74d71[0m
+[31m<         uint64_t lastOvecOperand;   // OVEC hack[0m
+[36m91,99d87[0m
+[31m< [0m
+[31m<         void setOvecOperand(uint64_t op) {[0m
+[31m<             this->lastOvecOperand = op;[0m
+[31m< [0m
+[31m<             // I'm the first to admit this is a bad programming. But remember[0m
+[31m<             // two things: never >1 threads emit OVEC, and never >1 OVECs fall[0m
+[31m<             // in one basic block in RoWild apps[0m
+[31m<             Decoder::lastOvecOperand = op;[0m
+[31m<         }[0m
+diff -riEZbwBd '--color=always' ./zsim/src/decoder.cpp ../zsim/src/decoder.cpp
+[36m37,40d36[0m
+[31m< #include "zsim.h"[0m
+[31m< [0m
+[31m< uint64_t Decoder::lastOvecOperand = 0;[0m
+[31m< std::queue<uint64_t> Decoder::ovecLoadAddresses;[0m
+[36m616,639d611[0m
+[31m<                     assert(INS_IsXchg(ins));[0m
+[31m<                     if (INS_IsXchg(ins) && INS_OperandReg(ins, 0) == REG_RCX && INS_OperandReg(ins, 1) == REG_RCX) {[0m
+[31m<                         uint32_t baseAddr = static_cast<uint32_t>(lastOvecOperand >> 32);[0m
+[31m<                         uint32_t orient = static_cast<uint32_t>(lastOvecOperand & 0xFFFFFFFF);[0m
+[31m<                         const int maxLoadNum = 64 / sizeof(float);[0m
+[31m<                         uint64_t lastCacheLine = 0;[0m
+[31m< [0m
+[31m<                         for (int _i = 0; _i < maxLoadNum; _i++) {[0m
+[31m<                             uint64_t _addr = baseAddr + _i * orient;[0m
+[31m<                             uint64_t _blockAddr = _addr / zinfo->lineSize;[0m
+[31m<                             if (_blockAddr == lastCacheLine) continue;[0m
+[31m< [0m
+[31m<                             ovecLoadAddresses.push(_addr);[0m
+[31m<                             lastCacheLine = _blockAddr;[0m
+[31m< [0m
+[31m<                             DynUop uop;[0m
+[31m<                             uop.clear();[0m
+[31m<                             uop.rs[0] = 0;  // Assume there are a few specific registers for OVEC; doesn't matter much[0m
+[31m<                             uop.rs[1] = 0;[0m
+[31m<                             uop.portMask = PORT_2;[0m
+[31m<                             uop.type = UOP_OVEC;[0m
+[31m<                             uops.push_back(uop);[0m
+[31m<                         }[0m
+[31m<                     } else {[0m
+[36m641d612[0m
+[31m<                     }[0m
+diff -riEZbwBd '--color=always' ./zsim/src/decoder.h ../zsim/src/decoder.h
+[36m30d29[0m
+[31m< #include <queue>[0m
+[36m46c45[0m
+[31m< enum UopType : uint8_t {UOP_GENERAL, UOP_LOAD, UOP_STORE, UOP_STORE_ADDR, UOP_FENCE, UOP_OVEC};[0m
+---
+[32m> enum UopType : uint8_t {UOP_GENERAL, UOP_LOAD, UOP_STORE, UOP_STORE_ADDR, UOP_FENCE};[0m
+[36m91c90[0m
+[31m< #define MAX_UOPS_PER_INSTR 16  // technically, even full decoders produce 1-4 uops; we increase this for common microsequenced instructions (e.g. xchg).[0m
+---
+[32m> #define MAX_UOPS_PER_INSTR 12  // technically, even full decoders produce 1-4 uops; we increase this for common microsequenced instructions (e.g. xchg).[0m
+[36m190,193d188[0m
+[31m< [0m
+[31m<     public:[0m
+[31m<         static uint64_t lastOvecOperand;[0m
+[31m<         static std::queue<uint64_t> ovecLoadAddresses;[0m
+diff -riEZbwBd '--color=always' ./zsim/src/filter_cache.h ../zsim/src/filter_cache.h
+[36m102c102[0m
+[31m<         inline uint64_t load(Address vAddr, uint64_t curCycle, Address pc) {[0m
+---
+[32m>         inline uint64_t load(Address vAddr, uint64_t curCycle) {[0m
+[36m110c110[0m
+[31m<                 return replace(vLineAddr, idx, true, curCycle, pc);[0m
+---
+[32m>                 return replace(vLineAddr, idx, true, curCycle);[0m
+[36m114c114[0m
+[31m<         inline uint64_t store(Address vAddr, uint64_t curCycle, Address pc) {[0m
+---
+[32m>         inline uint64_t store(Address vAddr, uint64_t curCycle) {[0m
+[36m124c124[0m
+[31m<                 return replace(vLineAddr, idx, false, curCycle, pc);[0m
+---
+[32m>                 return replace(vLineAddr, idx, false, curCycle);[0m
+[36m128c128[0m
+[31m<         uint64_t replace(Address vLineAddr, uint32_t idx, bool isLoad, uint64_t curCycle, Address pc) {[0m
+---
+[32m>         uint64_t replace(Address vLineAddr, uint32_t idx, bool isLoad, uint64_t curCycle) {[0m
+[36m132c132[0m
+[31m<             MemReq req = {pLineAddr, isLoad? GETS : GETX, 0, &dummyState, curCycle, &filterLock, dummyState, srcId, reqFlags, pc};[0m
+---
+[32m>             MemReq req = {pLineAddr, isLoad? GETS : GETX, 0, &dummyState, curCycle, &filterLock, dummyState, srcId, reqFlags};[0m
+diff -riEZbwBd '--color=always' ./zsim/src/hash.h ../zsim/src/hash.h
+[36m31,32d30[0m
+[31m< #include "log.h"[0m
+[31m< #include "zsim.h"[0m
+[36m70,82d67[0m
+[31m< };[0m
+[31m< [0m
+[31m< class FcpHash : public HashFamily {[0m
+[31m<     public:[0m
+[31m<         inline uint64_t hash(uint32_t id, uint64_t val) {[0m
+[31m<             (void)id;[0m
+[31m<             // return (((val/1024) ^ (((val%1024) >> 8) & 0x3)) & 0xFFFFFFFFFFFFFFFCULL) | (((val/1024) & 0x3) ^ (((val%1024) >> 8) & 0x3));[0m
+[31m< [0m
+[31m<             // return val ^ (((((val >> 11) & 1) ^ ((val >> 9) & 1)) << 11) | ((((val >> 10) & 1) ^ ((val >> 8) & 1)) << 10));[0m
+[31m< [0m
+[31m<             return zinfo->lineSize == 32 ? ((((((((val >> 3) & 1) ^ ((val >> 5) & 1))? (val | (1ULL << 5)) : (val & ~(1ULL << 5))) >> 4) & 1) ^ ((((((val >> 3) & 1) ^ ((val >> 5) & 1))? (val | (1ULL << 5)) : (val & ~(1ULL << 5))) >> 6) & 1)) ? (((((val >> 3) & 1) ^ ((val >> 5) & 1))? (val | (1ULL << 5)) : (val & ~(1ULL << 5))) | (1ULL << 6)) : (((((val >> 3) & 1) ^ ((val >> 5) & 1))? (val | (1ULL << 5)) : (val & ~(1ULL << 5))) & ~(1ULL << 6))) : ((((((((val >> 2) & 1) ^ ((val >> 4) & 1))? (val | (1ULL << 4)) : (val & ~(1ULL << 4))) >> 3) & 1) ^ ((((((val >> 2) & 1) ^ ((val >> 4) & 1))? (val | (1ULL << 4)) : (val & ~(1ULL << 4))) >> 5) & 1)) ? (((((val >> 2) & 1) ^ ((val >> 4) & 1))? (val | (1ULL << 4)) : (val & ~(1ULL << 4))) | (1ULL << 5)) : (((((val >> 2) & 1) ^ ((val >> 4) & 1))? (val | (1ULL << 4)) : (val & ~(1ULL << 4))) & ~(1ULL << 5)));[0m
+[31m<         }[0m
+[31m< [0m
+diff -riEZbwBd '--color=always' ./zsim/src/init.cpp ../zsim/src/init.cpp
+[36m107c107[0m
+[31m<     if (arrayType == "SetAssoc" || arrayType == "SetAssocFcp") {[0m
+---
+[32m>     if (arrayType == "SetAssoc") {[0m
+[36m139,140d138[0m
+[31m<         } else if (hashType == "FCP") {[0m
+[31m<             hf = new FcpHash;[0m
+[36m169,170d166[0m
+[31m<     } else if (replType == "FCP") {[0m
+[31m<         rp = new FcpPolicy(numLines, candidates);[0m
+[36m239,241c235[0m
+[31m<         array = new SetAssocArray(numLines, ways, rp, hf, false);[0m
+[31m<     } else if (arrayType == "SetAssocFcp") {[0m
+[31m<         array = new SetAssocArray(numLines, ways, rp, hf, true);[0m
+---
+[32m>         array = new SetAssocArray(numLines, ways, rp, hf);[0m
+[36m389d382[0m
+[31m<         string type = config.get<const char*>(prefix + "type", "Stream");[0m
+[36m396d388[0m
+[31m<             if (type == "Stream") {[0m
+[36m398,400d389[0m
+[31m<             } else if (type == "ANL") {[0m
+[31m<                 cg[i][0] = new AnlPrefetcher(pfName);[0m
+[31m<             }[0m
+diff -riEZbwBd '--color=always' ./zsim/src/memory_hierarchy.h ../zsim/src/memory_hierarchy.h
+[36m102c102[0m
+[31m<     Address pc;[0m
+---
+[32m> [0m
+diff -riEZbwBd '--color=always' ./zsim/src/null_core.cpp ../zsim/src/null_core.cpp
+[36m65,68c65,68[0m
+[31m< void NullCore::LoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {}[0m
+[31m< void NullCore::StoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {}[0m
+[31m< void NullCore::PredLoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {}[0m
+[31m< void NullCore::PredStoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {}[0m
+---
+[32m> void NullCore::LoadFunc(THREADID tid, ADDRINT addr) {}[0m
+[32m> void NullCore::StoreFunc(THREADID tid, ADDRINT addr) {}[0m
+[32m> void NullCore::PredLoadFunc(THREADID tid, ADDRINT addr, BOOL pred) {}[0m
+[32m> void NullCore::PredStoreFunc(THREADID tid, ADDRINT addr, BOOL pred) {}[0m
+diff -riEZbwBd '--color=always' ./zsim/src/null_core.h ../zsim/src/null_core.h
+[36m56,57c56,57[0m
+[31m<         static void LoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+[31m<         static void StoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+---
+[32m>         static void LoadFunc(THREADID tid, ADDRINT addr);[0m
+[32m>         static void StoreFunc(THREADID tid, ADDRINT addr);[0m
+[36m59,60c59,60[0m
+[31m<         static void PredLoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+[31m<         static void PredStoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+---
+[32m>         static void PredLoadFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+[32m>         static void PredStoreFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/ooo_core.cpp ../zsim/src/ooo_core.cpp
+[36m26d25[0m
+[31m< #include <iostream>[0m
+[36m137,140c136,137[0m
+[31m< inline void OOOCore::load(Address addr, Address pc) {[0m
+[31m<     loadAddrs[loads] = addr;[0m
+[31m<     loadPCs[loads] = pc;[0m
+[31m<     loads++;[0m
+---
+[32m> inline void OOOCore::load(Address addr) {[0m
+[32m>     loadAddrs[loads++] = addr;[0m
+[36m143,146c140,141[0m
+[31m< void OOOCore::store(Address addr, Address pc) {[0m
+[31m<     storeAddrs[stores] = addr;[0m
+[31m<     storePCs[stores] = pc;[0m
+[31m<     stores++;[0m
+---
+[32m> void OOOCore::store(Address addr) {[0m
+[32m>     storeAddrs[stores++] = addr;[0m
+[36m152,154c147[0m
+[31m<     loadAddrs[loads] = -1L;[0m
+[31m<     loadPCs[loads] = -1L;[0m
+[31m<     loads++;[0m
+---
+[32m>     loadAddrs[loads++] = -1L;[0m
+[36m158,160c151[0m
+[31m<     storeAddrs[stores] = -1L;[0m
+[31m<     storePCs[stores] = -1L;[0m
+[31m<     stores++;[0m
+---
+[32m>     storeAddrs[stores++] = -1L;[0m
+[36m280,282c271[0m
+[31m<                     Address addr = loadAddrs[loadIdx];[0m
+[31m<                     Address pc = loadPCs[loadIdx];[0m
+[31m<                     loadIdx++;[0m
+---
+[32m>                     Address addr = loadAddrs[loadIdx++];[0m
+[36m285,336c274[0m
+[31m<                         reqSatisfiedCycle = l1d->load(addr, dispatchCycle, pc) + L1D_LAT;[0m
+[31m<                         cRec.record(curCycle, dispatchCycle, reqSatisfiedCycle);[0m
+[31m<                     }[0m
+[31m< [0m
+[31m<                     // Enforce st-ld forwarding[0m
+[31m<                     uint32_t fwdIdx = (addr>>2) & (FWD_ENTRIES-1);[0m
+[31m<                     if (fwdArray[fwdIdx].addr == addr) {[0m
+[31m<                         // info("0x%lx FWD %ld %ld", addr, reqSatisfiedCycle, fwdArray[fwdIdx].storeCycle);[0m
+[31m<                         /* Take the MAX (see FilterCache's code) Our fwdArray[0m
+[31m<                          * imposes more stringent timing constraints than the[0m
+[31m<                          * l1d, b/c FilterCache does not change the line's[0m
+[31m<                          * availCycle on a store. This allows FilterCache to[0m
+[31m<                          * track per-line, not per-word availCycles.[0m
+[31m<                          */[0m
+[31m<                         reqSatisfiedCycle = MAX(reqSatisfiedCycle, fwdArray[fwdIdx].storeCycle);[0m
+[31m<                     }[0m
+[31m< [0m
+[31m<                     commitCycle = reqSatisfiedCycle;[0m
+[31m<                     loadQueue.markRetire(commitCycle);[0m
+[31m<                 }[0m
+[31m<                 break;[0m
+[31m< [0m
+[31m<             case UOP_OVEC:[0m
+[31m<                 {[0m
+[31m<                     // dispatchCycle = MAX(loadQueue.minAllocCycle(), dispatchCycle);[0m
+[31m<                     uint64_t lqCycle = loadQueue.minAllocCycle();[0m
+[31m<                     if (lqCycle > dispatchCycle) {[0m
+[31m< #ifdef LSU_IW_BACKPRESSURE[0m
+[31m<                         insWindow.poisonRange(curCycle, lqCycle, 0x4 /*PORT_2, loads*/);[0m
+[31m< #endif[0m
+[31m<                         dispatchCycle = lqCycle;[0m
+[31m<                     }[0m
+[31m< [0m
+[31m<                     // Wait for all previous store addresses to be resolved[0m
+[31m<                     dispatchCycle = MAX(lastStoreAddrCommitCycle+1, dispatchCycle);[0m
+[31m< [0m
+[31m<                     if (Decoder::ovecLoadAddresses.empty()) {[0m
+[31m<                         // Marged[0m
+[31m<                         commitCycle = lqCycle;[0m
+[31m<                         break;[0m
+[31m<                     }[0m
+[31m< [0m
+[31m<                     Address addr = Decoder::ovecLoadAddresses.front();[0m
+[31m<                     Decoder::ovecLoadAddresses.pop();[0m
+[31m<                     Address pc = 0L;[0m
+[31m< [0m
+[31m<                     uint64_t reqSatisfiedCycle = dispatchCycle;[0m
+[31m<                     if (addr == ((Address)0L)) {[0m
+[31m<                         commitCycle = lqCycle;  // Drop[0m
+[31m<                         break;[0m
+[31m<                     } else if (addr != ((Address)-1L)) {[0m
+[31m<                         reqSatisfiedCycle = l1d->load(addr, dispatchCycle, pc) + L1D_LAT + 5 /*OVEC address generation latency (TODO: too pessimistic)*/;[0m
+---
+[32m>                         reqSatisfiedCycle = l1d->load(addr, dispatchCycle) + L1D_LAT;[0m
+[36m373,376c310,311[0m
+[31m<                     Address addr = storeAddrs[storeIdx];[0m
+[31m<                     Address pc = storePCs[storeIdx];[0m
+[31m<                     storeIdx++;[0m
+[31m<                     uint64_t reqSatisfiedCycle = l1d->store(addr, dispatchCycle, pc) + L1D_LAT;[0m
+---
+[32m>                     Address addr = storeAddrs[storeIdx++];[0m
+[32m>                     uint64_t reqSatisfiedCycle = l1d->store(addr, dispatchCycle) + L1D_LAT;[0m
+[36m475c410[0m
+[31m<             uint64_t fetchLat = l1i->load(wrongPathAddr + lineSize*i, curCycle, wrongPathAddr + lineSize*i /*Kasraa: This is instruction cache and the PC is not required*/) - curCycle;[0m
+---
+[32m>             uint64_t fetchLat = l1i->load(wrongPathAddr + lineSize*i, curCycle) - curCycle;[0m
+[36m496c431[0m
+[31m<         uint64_t fetchLat = l1i->load(fetchAddr, curCycle, fetchAddr /*Kasraa: This is instruction cache and the PC is not required*/) - curCycle;[0m
+---
+[32m>         uint64_t fetchLat = l1i->load(fetchAddr, curCycle) - curCycle;[0m
+[36m555,556c490,491[0m
+[31m< void OOOCore::LoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {static_cast<OOOCore*>(cores[tid])->load(addr, pc);}[0m
+[31m< void OOOCore::StoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {static_cast<OOOCore*>(cores[tid])->store(addr, pc);}[0m
+---
+[32m> void OOOCore::LoadFunc(THREADID tid, ADDRINT addr) {static_cast<OOOCore*>(cores[tid])->load(addr);}[0m
+[32m> void OOOCore::StoreFunc(THREADID tid, ADDRINT addr) {static_cast<OOOCore*>(cores[tid])->store(addr);}[0m
+[36m558c493[0m
+[31m< void OOOCore::PredLoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+---
+[32m> void OOOCore::PredLoadFunc(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[36m560c495[0m
+[31m<     if (pred) core->load(addr, pc);[0m
+---
+[32m>     if (pred) core->load(addr);[0m
+[36m564c499[0m
+[31m< void OOOCore::PredStoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+---
+[32m> void OOOCore::PredStoreFunc(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[36m566c501[0m
+[31m<     if (pred) core->store(addr, pc);[0m
+---
+[32m>     if (pred) core->store(addr);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/ooo_core.h ../zsim/src/ooo_core.h
+[36m375,376d374[0m
+[31m<         Address loadPCs[256];[0m
+[31m< [0m
+[36m378d375[0m
+[31m<         Address storePCs[256];[0m
+[36m461,462c458,459[0m
+[31m<         inline void load(Address addr, Address pc);[0m
+[31m<         inline void store(Address addr, Address pc);[0m
+---
+[32m>         inline void load(Address addr);[0m
+[32m>         inline void store(Address addr);[0m
+[36m483,486c480,483[0m
+[31m<         static void LoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+[31m<         static void StoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+[31m<         static void PredLoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+[31m<         static void PredStoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+---
+[32m>         static void LoadFunc(THREADID tid, ADDRINT addr);[0m
+[32m>         static void StoreFunc(THREADID tid, ADDRINT addr);[0m
+[32m>         static void PredLoadFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+[32m>         static void PredStoreFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/prefetcher.cpp ../zsim/src/prefetcher.cpp
+[36m26d25[0m
+[31m< #include <iostream>[0m
+[36m29d27[0m
+[31m< #include "zsim.h"[0m
+[36m88a87,91[0m
+[32m>             /*uint64_t score = (reqCycle - array[i].lastCycle)*(3 - array[i].conf.counter());[0m
+[32m>             if (score > candScore) {[0m
+[32m>                 cand = i;[0m
+[32m>                 candScore = score;[0m
+[32m>             }*/[0m
+[36m138c141[0m
+[31m<                     MemReq pfReq = {req.lineAddr + prefetchPos - pos, GETS, req.childId, &state, reqCycle, req.childLock, state, req.srcId, MemReq::PREFETCH, req.pc /*Kasraa: Prefetch requests carry PC of their trigger access*/};[0m
+---
+[32m>                     MemReq pfReq = {req.lineAddr + prefetchPos - pos, GETS, req.childId, &state, reqCycle, req.childLock, state, req.srcId, MemReq::PREFETCH};[0m
+[36m188,231d190[0m
+[31m< uint64_t AnlPrefetcher::access(MemReq& req) {[0m
+[31m<     uint32_t origChildId = req.childId;[0m
+[31m<     req.childId = childId;[0m
+[31m< [0m
+[31m<     uint64_t pc = req.pc;[0m
+[31m<     uint64_t region = req.lineAddr / (1024 / zinfo->lineSize);[0m
+[31m< [0m
+[31m<     if (req.type == PUTS || req.type == PUTX) {[0m
+[31m<         mtable.terminateRegion(region);[0m
+[31m<         return parent->access(req);[0m
+[31m<     } else if (req.type == GETX) {[0m
+[31m<         return parent->access(req);[0m
+[31m<     }[0m
+[31m< [0m
+[31m<     assert(req.type == GETS);[0m
+[31m< [0m
+[31m<     if (!mtable.isInArray(pc, region)) {[0m
+[31m<         mtable.allocate(pc, region);[0m
+[31m<         return parent->access(req);[0m
+[31m<     }[0m
+[31m< [0m
+[31m<     uint64_t reqCycle = req.cycle;[0m
+[31m<     uint64_t respCycle = parent->access(req);[0m
+[31m< [0m
+[31m<     if (pfBuffer.find(req.lineAddr) != pfBuffer.end()) {[0m
+[31m<         uint64_t storedCycle = pfBuffer[req.lineAddr];[0m
+[31m<         if (storedCycle < respCycle - 500 /*too old*/) {[0m
+[31m<             pfBuffer[req.lineAddr] = respCycle;[0m
+[31m<         }[0m
+[31m<         respCycle = MIN(respCycle, pfBuffer[req.lineAddr]);[0m
+[31m<     } else {[0m
+[31m<         for (uint64_t i = 0; i < mtable.generatePrefetches(pc, region); i++) {[0m
+[31m<             MESIState state = I;[0m
+[31m<             uint64_t pfAddr = req.lineAddr + i;[0m
+[31m<             MemReq pfReq = {pfAddr, GETS, req.childId, &state, reqCycle, req.childLock, state, req.srcId, MemReq::PREFETCH, pc};[0m
+[31m<             uint64_t pfRespCycle = parent->access(pfReq);[0m
+[31m< [0m
+[31m<             pfBuffer[pfAddr] = pfRespCycle;[0m
+[31m<         }[0m
+[31m<     }[0m
+[31m< [0m
+[31m<     req.childId = origChildId;[0m
+[31m<     return respCycle;[0m
+[31m< }[0m
+diff -riEZbwBd '--color=always' ./zsim/src/prefetcher.h ../zsim/src/prefetcher.h
+[36m34,35d33[0m
+[31m< #include "anl_array.h"[0m
+[31m< #include "g_std/g_unordered_map.h"[0m
+[36m63,66d60[0m
+[31m<     protected:[0m
+[31m<         MemObject* parent;[0m
+[31m<         uint32_t childId;[0m
+[31m< [0m
+[36m105a100[0m
+[32m>         MemObject* parent;[0m
+[36m106a102[0m
+[32m>         uint32_t childId;[0m
+[36m116c112[0m
+[31m<         virtual uint64_t access(MemReq& req);[0m
+---
+[32m>         uint64_t access(MemReq& req);[0m
+[36m118,127d113[0m
+[31m< };[0m
+[31m< [0m
+[31m< class AnlPrefetcher : public StreamPrefetcher {[0m
+[31m<     private:[0m
+[31m<         AnlArray<16> mtable;[0m
+[31m<         g_unordered_map<uint64_t, uint64_t> pfBuffer;[0m
+[31m< [0m
+[31m<     public:[0m
+[31m<         explicit AnlPrefetcher(const g_string& _name) : StreamPrefetcher(_name) {}[0m
+[31m<         uint64_t access(MemReq& req) override;[0m
+diff -riEZbwBd '--color=always' ./zsim/src/repl_policies.h ../zsim/src/repl_policies.h
+[36m57,58d56[0m
+[31m< [0m
+[31m<         virtual void manipulate(uint32_t id) {}[0m
+[36m144,227d141[0m
+[31m< };[0m
+[31m< [0m
+[31m< class FcpPolicy : public ReplPolicy {[0m
+[31m<     protected:[0m
+[31m<         uint32_t** array;[0m
+[31m<         uint32_t numLines;[0m
+[31m<         uint32_t numWays;[0m
+[31m<         uint32_t numSets;[0m
+[31m< [0m
+[31m<     public:[0m
+[31m<         explicit FcpPolicy(uint32_t _numLines, uint32_t _numWays) : numLines(_numLines), numWays(_numWays) {[0m
+[31m<             numSets = numLines / numWays;[0m
+[31m< [0m
+[31m<             array = gm_malloc<uint32_t*>(numSets);[0m
+[31m<             for (uint32_t s = 0; s < numSets; s++) {[0m
+[31m<                 array[s] = gm_malloc<uint32_t>(numWays);[0m
+[31m<                 for (uint32_t w = 0; w < numWays; w++) {[0m
+[31m<                     array[s][w] = w;[0m
+[31m<                 }[0m
+[31m<             }[0m
+[31m<         }[0m
+[31m< [0m
+[31m<         ~FcpPolicy() {[0m
+[31m<             for (uint32_t s = 0; s < numSets; s++) {[0m
+[31m<                 gm_free(array[s]);[0m
+[31m<             }[0m
+[31m< [0m
+[31m<             gm_free(array);[0m
+[31m<         }[0m
+[31m< [0m
+[31m<         void update(uint32_t id, const MemReq* req) {[0m
+[31m<             assert(id < numLines);[0m
+[31m< [0m
+[31m<             uint32_t set = id / numWays;[0m
+[31m<             uint32_t way = id % numWays;[0m
+[31m< [0m
+[31m<             for (uint32_t i = 0; i < numWays; i++) {[0m
+[31m<                 if (array[set][i] < array[set][way]) {[0m
+[31m<                     array[set][i]++;[0m
+[31m<                 }[0m
+[31m<             }[0m
+[31m< [0m
+[31m<             array[set][way] = 0;[0m
+[31m<         }[0m
+[31m< [0m
+[31m<         void replaced(uint32_t id) {[0m
+[31m<             assert(id < numLines);[0m
+[31m<             // array[set][way] = numWays - 1;[0m
+[31m<         }[0m
+[31m< [0m
+[31m<         void manipulate(uint32_t id) {[0m
+[31m<             uint32_t set = id / numWays;[0m
+[31m<             uint32_t way = id % numWays;[0m
+[31m< [0m
+[31m<             array[set][way] = MIN(static_cast<uint32_t>(array[set][way] * array[set][way]), numWays - 1);[0m
+[31m<         }[0m
+[31m< [0m
+[31m<         template <typename C> inline uint32_t rank(const MemReq* req, C cands) {[0m
+[31m<             uint32_t bestCnt = 0;[0m
+[31m<             uint32_t bestId = 0;[0m
+[31m< [0m
+[31m<             for (auto ci = cands.begin(); ci != cands.end(); ci.inc()) {[0m
+[31m<                 uint32_t id = *ci;[0m
+[31m<                 assert(id < numLines);[0m
+[31m< [0m
+[31m<                 if (!cc->isValid(id)) return id;[0m
+[31m< [0m
+[31m<                 uint32_t set = id / numWays;[0m
+[31m<                 uint32_t way = id % numWays;[0m
+[31m<                 uint32_t cnt = array[set][way];[0m
+[31m< [0m
+[31m<                 if (cnt > bestCnt) {[0m
+[31m<                     bestCnt = cnt;[0m
+[31m<                     bestId = id;[0m
+[31m<                 }[0m
+[31m<             }[0m
+[31m< [0m
+[31m<             assert(bestId < numLines);[0m
+[31m<             assert(bestCnt == numWays - 1);[0m
+[31m< [0m
+[31m<             return bestId;[0m
+[31m<         }[0m
+[31m< [0m
+[31m<         DECL_RANK_BINDINGS;[0m
+diff -riEZbwBd '--color=always' ./zsim/src/simple_core.cpp ../zsim/src/simple_core.cpp
+[36m50,51c50,51[0m
+[31m< void SimpleCore::load(Address addr, Address pc) {[0m
+[31m<     curCycle = l1d->load(addr, curCycle, pc);[0m
+---
+[32m> void SimpleCore::load(Address addr) {[0m
+[32m>     curCycle = l1d->load(addr, curCycle);[0m
+[36m54,55c54,55[0m
+[31m< void SimpleCore::store(Address addr, Address pc) {[0m
+[31m<     curCycle = l1d->store(addr, curCycle, pc);[0m
+---
+[32m> void SimpleCore::store(Address addr) {[0m
+[32m>     curCycle = l1d->store(addr, curCycle);[0m
+[36m66c66[0m
+[31m<         curCycle = l1i->load(fetchAddr, curCycle, fetchAddr /*Kasraa: This is instruction cache and the PC is not required*/);[0m
+---
+[32m>         curCycle = l1i->load(fetchAddr, curCycle);[0m
+[36m95,96c95,96[0m
+[31m< void SimpleCore::LoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+[31m<     static_cast<SimpleCore*>(cores[tid])->load(addr, pc);[0m
+---
+[32m> void SimpleCore::LoadFunc(THREADID tid, ADDRINT addr) {[0m
+[32m>     static_cast<SimpleCore*>(cores[tid])->load(addr);[0m
+[36m99,100c99,100[0m
+[31m< void SimpleCore::StoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+[31m<     static_cast<SimpleCore*>(cores[tid])->store(addr, pc);[0m
+---
+[32m> void SimpleCore::StoreFunc(THREADID tid, ADDRINT addr) {[0m
+[32m>     static_cast<SimpleCore*>(cores[tid])->store(addr);[0m
+[36m103,104c103,104[0m
+[31m< void SimpleCore::PredLoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+[31m<     if (pred) static_cast<SimpleCore*>(cores[tid])->load(addr, pc);[0m
+---
+[32m> void SimpleCore::PredLoadFunc(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[32m>     if (pred) static_cast<SimpleCore*>(cores[tid])->load(addr);[0m
+[36m107,108c107,108[0m
+[31m< void SimpleCore::PredStoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+[31m<     if (pred) static_cast<SimpleCore*>(cores[tid])->store(addr, pc);[0m
+---
+[32m> void SimpleCore::PredStoreFunc(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[32m>     if (pred) static_cast<SimpleCore*>(cores[tid])->store(addr);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/simple_core.h ../zsim/src/simple_core.h
+[36m62,63c62,63[0m
+[31m<         inline void load(Address addr, Address pc);[0m
+[31m<         inline void store(Address addr, Address pc);[0m
+---
+[32m>         inline void load(Address addr);[0m
+[32m>         inline void store(Address addr);[0m
+[36m66,67c66,67[0m
+[31m<         static void LoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+[31m<         static void StoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+---
+[32m>         static void LoadFunc(THREADID tid, ADDRINT addr);[0m
+[32m>         static void StoreFunc(THREADID tid, ADDRINT addr);[0m
+[36m69,70c69,70[0m
+[31m<         static void PredLoadFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+[31m<         static void PredStoreFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+---
+[32m>         static void PredLoadFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+[32m>         static void PredStoreFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/timing_core.cpp ../zsim/src/timing_core.cpp
+[36m80c80[0m
+[31m< void TimingCore::loadAndRecord(Address addr, Address pc) {[0m
+---
+[32m> void TimingCore::loadAndRecord(Address addr) {[0m
+[36m82c82[0m
+[31m<     curCycle = l1d->load(addr, curCycle, pc);[0m
+---
+[32m>     curCycle = l1d->load(addr, curCycle);[0m
+[36m86c86[0m
+[31m< void TimingCore::storeAndRecord(Address addr, Address pc) {[0m
+---
+[32m> void TimingCore::storeAndRecord(Address addr) {[0m
+[36m88c88[0m
+[31m<     curCycle = l1d->store(addr, curCycle, pc);[0m
+---
+[32m>     curCycle = l1d->store(addr, curCycle);[0m
+[36m99c99[0m
+[31m<         curCycle = l1i->load(fetchAddr, curCycle, fetchAddr /*Kasraa: This is instruction cache and the PC is not required*/);[0m
+---
+[32m>         curCycle = l1i->load(fetchAddr, curCycle);[0m
+[36m109,110c109,110[0m
+[31m< void TimingCore::LoadAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+[31m<     static_cast<TimingCore*>(cores[tid])->loadAndRecord(addr, pc);[0m
+---
+[32m> void TimingCore::LoadAndRecordFunc(THREADID tid, ADDRINT addr) {[0m
+[32m>     static_cast<TimingCore*>(cores[tid])->loadAndRecord(addr);[0m
+[36m113,114c113,114[0m
+[31m< void TimingCore::StoreAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+[31m<     static_cast<TimingCore*>(cores[tid])->storeAndRecord(addr, pc);[0m
+---
+[32m> void TimingCore::StoreAndRecordFunc(THREADID tid, ADDRINT addr) {[0m
+[32m>     static_cast<TimingCore*>(cores[tid])->storeAndRecord(addr);[0m
+[36m129,130c129,130[0m
+[31m< void TimingCore::PredLoadAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+[31m<     if (pred) static_cast<TimingCore*>(cores[tid])->loadAndRecord(addr, pc);[0m
+---
+[32m> void TimingCore::PredLoadAndRecordFunc(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[32m>     if (pred) static_cast<TimingCore*>(cores[tid])->loadAndRecord(addr);[0m
+[36m133,134c133,134[0m
+[31m< void TimingCore::PredStoreAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+[31m<     if (pred) static_cast<TimingCore*>(cores[tid])->storeAndRecord(addr, pc);[0m
+---
+[32m> void TimingCore::PredStoreAndRecordFunc(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[32m>     if (pred) static_cast<TimingCore*>(cores[tid])->storeAndRecord(addr);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/timing_core.h ../zsim/src/timing_core.h
+[36m69,70c69,70[0m
+[31m<         inline void loadAndRecord(Address addr, Address pc);[0m
+[31m<         inline void storeAndRecord(Address addr, Address pc);[0m
+---
+[32m>         inline void loadAndRecord(Address addr);[0m
+[32m>         inline void storeAndRecord(Address addr);[0m
+[36m74,75c74,75[0m
+[31m<         static void LoadAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+[31m<         static void StoreAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc);[0m
+---
+[32m>         static void LoadAndRecordFunc(THREADID tid, ADDRINT addr);[0m
+[32m>         static void StoreAndRecordFunc(THREADID tid, ADDRINT addr);[0m
+[36m77,78c77,78[0m
+[31m<         static void PredLoadAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+[31m<         static void PredStoreAndRecordFunc(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred);[0m
+---
+[32m>         static void PredLoadAndRecordFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+[32m>         static void PredStoreAndRecordFunc(THREADID tid, ADDRINT addr, BOOL pred);[0m
+diff -riEZbwBd '--color=always' ./zsim/src/zsim.cpp ../zsim/src/zsim.cpp
+[36m170,171c170,171[0m
+[31m< VOID PIN_FAST_ANALYSIS_CALL IndirectLoadSingle(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+[31m<     fPtrs[tid].loadPtr(tid, addr, pc);[0m
+---
+[32m> VOID PIN_FAST_ANALYSIS_CALL IndirectLoadSingle(THREADID tid, ADDRINT addr) {[0m
+[32m>     fPtrs[tid].loadPtr(tid, addr);[0m
+[36m174,175c174,175[0m
+[31m< VOID PIN_FAST_ANALYSIS_CALL IndirectStoreSingle(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+[31m<     fPtrs[tid].storePtr(tid, addr, pc);[0m
+---
+[32m> VOID PIN_FAST_ANALYSIS_CALL IndirectStoreSingle(THREADID tid, ADDRINT addr) {[0m
+[32m>     fPtrs[tid].storePtr(tid, addr);[0m
+[36m186,187c186,187[0m
+[31m< VOID PIN_FAST_ANALYSIS_CALL IndirectPredLoadSingle(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+[31m<     fPtrs[tid].predLoadPtr(tid, addr, pc, pred);[0m
+---
+[32m> VOID PIN_FAST_ANALYSIS_CALL IndirectPredLoadSingle(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[32m>     fPtrs[tid].predLoadPtr(tid, addr, pred);[0m
+[36m190,191c190,191[0m
+[31m< VOID PIN_FAST_ANALYSIS_CALL IndirectPredStoreSingle(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+[31m<     fPtrs[tid].predStorePtr(tid, addr, pc, pred);[0m
+---
+[32m> VOID PIN_FAST_ANALYSIS_CALL IndirectPredStoreSingle(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[32m>     fPtrs[tid].predStorePtr(tid, addr, pred);[0m
+[36m212c212[0m
+[31m< VOID JoinAndLoadSingle(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+---
+[32m> VOID JoinAndLoadSingle(THREADID tid, ADDRINT addr) {[0m
+[36m214c214[0m
+[31m<     fPtrs[tid].loadPtr(tid, addr, pc);[0m
+---
+[32m>     fPtrs[tid].loadPtr(tid, addr);[0m
+[36m217c217[0m
+[31m< VOID JoinAndStoreSingle(THREADID tid, ADDRINT addr, ADDRINT pc) {[0m
+---
+[32m> VOID JoinAndStoreSingle(THREADID tid, ADDRINT addr) {[0m
+[36m219c219[0m
+[31m<     fPtrs[tid].storePtr(tid, addr, pc);[0m
+---
+[32m>     fPtrs[tid].storePtr(tid, addr);[0m
+[36m232c232[0m
+[31m< VOID JoinAndPredLoadSingle(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+---
+[32m> VOID JoinAndPredLoadSingle(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[36m234c234[0m
+[31m<     fPtrs[tid].predLoadPtr(tid, addr, pc, pred);[0m
+---
+[32m>     fPtrs[tid].predLoadPtr(tid, addr, pred);[0m
+[36m237c237[0m
+[31m< VOID JoinAndPredStoreSingle(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {[0m
+---
+[32m> VOID JoinAndPredStoreSingle(THREADID tid, ADDRINT addr, BOOL pred) {[0m
+[36m239c239[0m
+[31m<     fPtrs[tid].predStorePtr(tid, addr, pc, pred);[0m
+---
+[32m>     fPtrs[tid].predStorePtr(tid, addr, pred);[0m
+[36m243c243[0m
+[31m< VOID NOPLoadStoreSingle(THREADID tid, ADDRINT addr, ADDRINT pc) {}[0m
+---
+[32m> VOID NOPLoadStoreSingle(THREADID tid, ADDRINT addr) {}[0m
+[36m246c246[0m
+[31m< VOID NOPPredLoadStoreSingle(THREADID tid, ADDRINT addr, ADDRINT pc, BOOL pred) {}[0m
+---
+[32m> VOID NOPPredLoadStoreSingle(THREADID tid, ADDRINT addr, BOOL pred) {}[0m
+[36m546c546[0m
+[31m<                 INS_InsertCall(ins, IPOINT_BEFORE, LoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD_EA, IARG_INST_PTR, IARG_END);[0m
+---
+[32m>                 INS_InsertCall(ins, IPOINT_BEFORE, LoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD_EA, IARG_END);[0m
+[36m548c548[0m
+[31m<                 INS_InsertCall(ins, IPOINT_BEFORE, PredLoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD_EA, IARG_INST_PTR, IARG_EXECUTING, IARG_END);[0m
+---
+[32m>                 INS_InsertCall(ins, IPOINT_BEFORE, PredLoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD_EA, IARG_EXECUTING, IARG_END);[0m
+[36m554c554[0m
+[31m<                 INS_InsertCall(ins, IPOINT_BEFORE, LoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD2_EA, IARG_INST_PTR, IARG_END);[0m
+---
+[32m>                 INS_InsertCall(ins, IPOINT_BEFORE, LoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD2_EA, IARG_END);[0m
+[36m556c556[0m
+[31m<                 INS_InsertCall(ins, IPOINT_BEFORE, PredLoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD2_EA, IARG_INST_PTR, IARG_EXECUTING, IARG_END);[0m
+---
+[32m>                 INS_InsertCall(ins, IPOINT_BEFORE, PredLoadFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYREAD2_EA, IARG_EXECUTING, IARG_END);[0m
+[36m562c562[0m
+[31m<                 INS_InsertCall(ins, IPOINT_BEFORE,  StoreFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYWRITE_EA, IARG_INST_PTR, IARG_END);[0m
+---
+[32m>                 INS_InsertCall(ins, IPOINT_BEFORE,  StoreFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYWRITE_EA, IARG_END);[0m
+[36m564c564[0m
+[31m<                 INS_InsertCall(ins, IPOINT_BEFORE,  PredStoreFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYWRITE_EA, IARG_INST_PTR, IARG_EXECUTING, IARG_END);[0m
+---
+[32m>                 INS_InsertCall(ins, IPOINT_BEFORE,  PredStoreFuncPtr, IARG_FAST_ANALYSIS_CALL, IARG_THREAD_ID, IARG_MEMORYWRITE_EA, IARG_EXECUTING, IARG_END);[0m
+[36m1204,1207c1204[0m
+[31m<             // info("OVEC instruction detected: op=%ld", op);[0m
+[31m<             zinfo->cores[tid]->setOvecOperand(op);[0m
+[31m<             return;[0m
+[31m<             // panic("Thread %d issued unknown magic op %ld!", tid, op);[0m
+---
+[32m>             panic("Thread %d issued unknown magic op %ld!", tid, op);[0m
+Only in ./zsim/tests: baseline.cfg
+Only in ./zsim/tests: CarriBot_baseline.cfg
+Only in ./zsim/tests: CarriBot_tartan.cfg
+Only in ./zsim/tests: DeliBot_baseline.cfg
+Only in ./zsim/tests: DeliBot_tartan.cfg
+Only in ./zsim/tests: FlyBot_baseline.cfg
+Only in ./zsim/tests: FlyBot_tartan.cfg
+Only in ../zsim/tests: het.cfg
+Only in ./zsim/tests: HomeBot_baseline.cfg
+Only in ./zsim/tests: HomeBot_tartan.cfg
+Only in ../zsim/tests: hooks.cfg
+Only in ./zsim/tests: MoveBot_baseline.cfg
+Only in ./zsim/tests: MoveBot_tartan.cfg
+Only in ./zsim/tests: PatrolBot_baseline.cfg
+Only in ./zsim/tests: PatrolBot_tartan.cfg
+Only in ../zsim/tests: pgo.cfg
+Only in ../zsim/tests: ptree.cfg
+Only in ../zsim/tests: simple.cfg
+Only in ./zsim/tests: tartan.cfg
