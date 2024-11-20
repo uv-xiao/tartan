@@ -1,4 +1,10 @@
 import os, sys
+
+# import scons_compiledb
+# which python?
+print(sys.executable)
+import scons_compiledb
+
 from os.path import join as joinpath
 
 useIcc = False
@@ -11,6 +17,8 @@ def buildSim(cppFlags, dir, type, pgo=None):
     print("Building " + type + " zsim at " + buildDir)
 
     env = Environment(ENV = os.environ, tools = ['default', 'textfile'])
+
+    scons_compiledb.enable(env)
     env["CPPFLAGS"] = cppFlags
 
     allSrcs = [f for dir, subdirs, files in os.walk("src") for f in Glob(dir + "/*")]
@@ -169,6 +177,7 @@ def buildSim(cppFlags, dir, type, pgo=None):
         env["PINLINKFLAGS"] += useFlags
 
     env.SConscript("src/SConscript", variant_dir=buildDir, exports= {'env' : env.Clone()})
+    env.CompileDb()
 
 ####
 
@@ -228,3 +237,4 @@ elif pgoPhase.startswith("use"):
 else:
     for type in buildTypes:
         buildSim(buildFlags[type], baseBuildDir, type)
+

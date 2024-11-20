@@ -40,7 +40,7 @@ from npu import *
 # quickRun = True
 # numQuickInstructions = 15 * 1000
 quickRun = False
-NUM_RUNS = 10
+NUM_RUNS = 1
 
 # Set this if you have storage somewhere else. Otherwise, leave it commented
 # out and the current location will be used for storing large files

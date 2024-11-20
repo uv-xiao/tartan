@@ -1,0 +1,282 @@
+{
+  "build/opt/access_tracing.cpp:": {
+    "command": "g++ -o build/opt/access_tracing.ot -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/access_tracing.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/access_tracing.cpp"
+  }, 
+  "build/opt/cache.cpp:": {
+    "command": "g++ -o build/opt/cache.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/cache.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/cache.cpp"
+  }, 
+  "build/opt/cache_arrays.cpp:": {
+    "command": "g++ -o build/opt/cache_arrays.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/cache_arrays.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/cache_arrays.cpp"
+  }, 
+  "build/opt/coherence_ctrls.cpp:": {
+    "command": "g++ -o build/opt/coherence_ctrls.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/coherence_ctrls.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/coherence_ctrls.cpp"
+  }, 
+  "build/opt/config.cpp:": {
+    "command": "g++ -o build/opt/config.o -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/config.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/config.cpp"
+  }, 
+  "build/opt/contention_sim.cpp:": {
+    "command": "g++ -o build/opt/contention_sim.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/contention_sim.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/contention_sim.cpp"
+  }, 
+  "build/opt/core_recorder.cpp:": {
+    "command": "g++ -o build/opt/core_recorder.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/core_recorder.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/core_recorder.cpp"
+  }, 
+  "build/opt/ddr_mem.cpp:": {
+    "command": "g++ -o build/opt/ddr_mem.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/ddr_mem.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/ddr_mem.cpp"
+  }, 
+  "build/opt/debug_harness.cpp:": {
+    "command": "g++ -o build/opt/debug_harness.o -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/debug_harness.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/debug_harness.cpp"
+  }, 
+  "build/opt/debug_zsim.cpp:": {
+    "command": "g++ -o build/opt/debug_zsim.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/debug_zsim.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/debug_zsim.cpp"
+  }, 
+  "build/opt/decoder.cpp:": {
+    "command": "g++ -o build/opt/decoder.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/decoder.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/decoder.cpp"
+  }, 
+  "build/opt/detailed_mem.cpp:": {
+    "command": "g++ -o build/opt/detailed_mem.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/detailed_mem.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/detailed_mem.cpp"
+  }, 
+  "build/opt/detailed_mem_params.cpp:": {
+    "command": "g++ -o build/opt/detailed_mem_params.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/detailed_mem_params.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/detailed_mem_params.cpp"
+  }, 
+  "build/opt/dramsim_mem_ctrl.cpp:": {
+    "command": "g++ -o build/opt/dramsim_mem_ctrl.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/dramsim_mem_ctrl.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/dramsim_mem_ctrl.cpp"
+  }, 
+  "build/opt/dumptrace.cpp:": {
+    "command": "g++ -o build/opt/dumptrace.ot -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/dumptrace.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/dumptrace.cpp"
+  }, 
+  "build/opt/fftoggle.cpp:": {
+    "command": "g++ -o build/opt/fftoggle.o -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/fftoggle.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/fftoggle.cpp"
+  }, 
+  "build/opt/galloc.cpp:": {
+    "command": "g++ -o build/opt/galloc.o -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/galloc.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/galloc.cpp"
+  }, 
+  "build/opt/hash.cpp:": {
+    "command": "g++ -o build/opt/hash.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/hash.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/hash.cpp"
+  }, 
+  "build/opt/hdf5_stats.cpp:": {
+    "command": "g++ -o build/opt/hdf5_stats.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/hdf5_stats.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/hdf5_stats.cpp"
+  }, 
+  "build/opt/init.cpp:": {
+    "command": "g++ -o build/opt/init.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/init.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/init.cpp"
+  }, 
+  "build/opt/log.cpp:": {
+    "command": "g++ -o build/opt/log.o -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/log.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/log.cpp"
+  }, 
+  "build/opt/lookahead.cpp:": {
+    "command": "g++ -o build/opt/lookahead.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/lookahead.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/lookahead.cpp"
+  }, 
+  "build/opt/mem_ctrls.cpp:": {
+    "command": "g++ -o build/opt/mem_ctrls.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/mem_ctrls.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/mem_ctrls.cpp"
+  }, 
+  "build/opt/memory_hierarchy.cpp:": {
+    "command": "g++ -o build/opt/memory_hierarchy.ot -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/memory_hierarchy.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/memory_hierarchy.cpp"
+  }, 
+  "build/opt/monitor.cpp:": {
+    "command": "g++ -o build/opt/monitor.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/monitor.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/monitor.cpp"
+  }, 
+  "build/opt/network.cpp:": {
+    "command": "g++ -o build/opt/network.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/network.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/network.cpp"
+  }, 
+  "build/opt/null_core.cpp:": {
+    "command": "g++ -o build/opt/null_core.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/null_core.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/null_core.cpp"
+  }, 
+  "build/opt/ooo_core.cpp:": {
+    "command": "g++ -o build/opt/ooo_core.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/ooo_core.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/ooo_core.cpp"
+  }, 
+  "build/opt/ooo_core_recorder.cpp:": {
+    "command": "g++ -o build/opt/ooo_core_recorder.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/ooo_core_recorder.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/ooo_core_recorder.cpp"
+  }, 
+  "build/opt/parse_vdso.cpp:": {
+    "command": "g++ -o build/opt/parse_vdso.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/parse_vdso.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/parse_vdso.cpp"
+  }, 
+  "build/opt/partition_mapper.cpp:": {
+    "command": "g++ -o build/opt/partition_mapper.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/partition_mapper.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/partition_mapper.cpp"
+  }, 
+  "build/opt/pin_cmd.cpp:": {
+    "command": "g++ -o build/opt/pin_cmd.o -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/pin_cmd.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/pin_cmd.cpp"
+  }, 
+  "build/opt/prefetcher.cpp:": {
+    "command": "g++ -o build/opt/prefetcher.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/prefetcher.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/prefetcher.cpp"
+  }, 
+  "build/opt/proc_stats.cpp:": {
+    "command": "g++ -o build/opt/proc_stats.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/proc_stats.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/proc_stats.cpp"
+  }, 
+  "build/opt/process_stats.cpp:": {
+    "command": "g++ -o build/opt/process_stats.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/process_stats.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/process_stats.cpp"
+  }, 
+  "build/opt/process_tree.cpp:": {
+    "command": "g++ -o build/opt/process_tree.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/process_tree.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/process_tree.cpp"
+  }, 
+  "build/opt/scheduler.cpp:": {
+    "command": "g++ -o build/opt/scheduler.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/scheduler.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/scheduler.cpp"
+  }, 
+  "build/opt/simple_core.cpp:": {
+    "command": "g++ -o build/opt/simple_core.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/simple_core.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/simple_core.cpp"
+  }, 
+  "build/opt/sorttrace.cpp:": {
+    "command": "g++ -o build/opt/sorttrace.ot -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/sorttrace.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/sorttrace.cpp"
+  }, 
+  "build/opt/stats_filter.cpp:": {
+    "command": "g++ -o build/opt/stats_filter.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/stats_filter.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/stats_filter.cpp"
+  }, 
+  "build/opt/text_stats.cpp:": {
+    "command": "g++ -o build/opt/text_stats.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/text_stats.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/text_stats.cpp"
+  }, 
+  "build/opt/timing_cache.cpp:": {
+    "command": "g++ -o build/opt/timing_cache.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/timing_cache.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/timing_cache.cpp"
+  }, 
+  "build/opt/timing_core.cpp:": {
+    "command": "g++ -o build/opt/timing_core.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/timing_core.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/timing_core.cpp"
+  }, 
+  "build/opt/timing_event.cpp:": {
+    "command": "g++ -o build/opt/timing_event.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/timing_event.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/timing_event.cpp"
+  }, 
+  "build/opt/trace_driver.cpp:": {
+    "command": "g++ -o build/opt/trace_driver.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/trace_driver.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/trace_driver.cpp"
+  }, 
+  "build/opt/tracing_cache.cpp:": {
+    "command": "g++ -o build/opt/tracing_cache.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/tracing_cache.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/tracing_cache.cpp"
+  }, 
+  "build/opt/utility_monitor.cpp:": {
+    "command": "g++ -o build/opt/utility_monitor.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/utility_monitor.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/utility_monitor.cpp"
+  }, 
+  "build/opt/virt/cpu.cpp:": {
+    "command": "g++ -o build/opt/virt/cpu.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/virt/cpu.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/virt/cpu.cpp"
+  }, 
+  "build/opt/virt/fs.cpp:": {
+    "command": "g++ -o build/opt/virt/fs.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/virt/fs.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/virt/fs.cpp"
+  }, 
+  "build/opt/virt/ports.cpp:": {
+    "command": "g++ -o build/opt/virt/ports.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/virt/ports.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/virt/ports.cpp"
+  }, 
+  "build/opt/virt/syscall_name.cpp:": {
+    "command": "g++ -o build/opt/virt/syscall_name.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/virt/syscall_name.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/virt/syscall_name.cpp"
+  }, 
+  "build/opt/virt/time.cpp:": {
+    "command": "g++ -o build/opt/virt/time.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/virt/time.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/virt/time.cpp"
+  }, 
+  "build/opt/virt/timeout.cpp:": {
+    "command": "g++ -o build/opt/virt/timeout.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/virt/timeout.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/virt/timeout.cpp"
+  }, 
+  "build/opt/virt/virt.cpp:": {
+    "command": "g++ -o build/opt/virt/virt.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/virt/virt.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/virt/virt.cpp"
+  }, 
+  "build/opt/zsim.cpp:": {
+    "command": "g++ -o build/opt/zsim.os -c -fPIC -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -DMT_SAFE_LOG -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/zsim.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/zsim.cpp"
+  }, 
+  "build/opt/zsim_harness.cpp:": {
+    "command": "g++ -o build/opt/zsim_harness.o -c -march=core2 -g -O3 -funroll-loops -g -std=c++0x -Wall -Wno-unknown-pragmas -Wno-deprecated -Wno-unused-function -Wno-catch-value -fomit-frame-pointer -fno-stack-protector -MMD -DBIGARRAY_MULTIPLIER=1 -DUSING_XED -DTARGET_IA32E -DHOST_IA32E -fPIC -DTARGET_LINUX -fabi-version=2 -D_GLIBCXX_USE_CXX11_ABI=0 -Werror -DPIN_PATH=\"/tartan/pin-2.14-71313-gcc.4.4.7-linux/intel64/bin/pinbin\" -DZSIM_PATH=\"/tartan/zsim/build/opt/libzsim.so\" -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/xed-intel64/include -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/source/include/pin/gen -I/tartan/pin-2.14-71313-gcc.4.4.7-linux/extras/components/include -I/usr/include/hdf5/serial -Ibuild/opt build/opt/zsim_harness.cpp", 
+    "directory": "/tartan/zsim", 
+    "file": "build/opt/zsim_harness.cpp"
+  }
+}

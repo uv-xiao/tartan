@@ -7,8 +7,10 @@ RUN sed -ri.bak -e 's/\/\/.*?(archive.ubuntu.com|mirrors.*?)\/ubuntu/\/\/mirrors
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     sudo \
+    tmux \
     build-essential \
     software-properties-common \
+    python-pip\
     python3.6 \
     python3-pip \
     python3.6-dev \
@@ -74,6 +76,7 @@ COPY requirements.txt .
 
 RUN python3 -m pip install --upgrade --verbose pip setuptools wheel
 RUN pip3 install --no-cache-dir -r requirements.txt
+RUN python -m pip install scons_compiledb
 
 COPY . .
 
